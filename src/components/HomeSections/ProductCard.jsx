@@ -54,7 +54,7 @@ const ProductCard = ({ product, index }) => {
           <div className="h-auto w-full flex py-4 items-start flex-col gap-2 xxs:px-2  xs:justify-center">
             <h1 className="font-medium">{product.title}</h1>
             {/* <span className="text-gray-500">100 Gms</span> */}
-            <select className="bg-gray-300 rounded-lg px-2 py-1 text-gray-700">
+            <select className="bg-gray-200 rounded-lg px-2 py-1 text-gray-700">
               <option>100gms</option>
               <option>500gms</option>
               <option>1000gms</option>
