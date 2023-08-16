@@ -1,0 +1,16 @@
+.image-container {
+  height: auto;
+}
+
+.product-category-img {
+  height: 300px;
+  width: 500px;
+}
+
+.discount {
+  font-weight: 900;
+}
+
+.product-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
