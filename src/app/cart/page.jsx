@@ -34,11 +34,8 @@ const CartPage = () => {
   }, [cartList]);
 
   return (
-    <div className="md:px-20  bg-gray-200">
+    <div className="md:px-20  bg-gray-200 px-2">
       <div className="pt-6">
-        <h1 className="text-lg lg:text-xl">
-          Review Items <span>{cartList.length}</span>
-        </h1>
         <ul role="list" className=" divide-gray-200">
           {cartList.length === 0 ? (
             <div className="flex items-center justify-start pt-48 flex-col h-screen ">
@@ -53,6 +50,9 @@ const CartPage = () => {
             </div>
           ) : (
             <div>
+              <h1 className="text-lg lg:text-xl">
+          Review Items <span>{cartList.length}</span>
+        </h1>
               <div className="py-2 grow flex-1 pt-6">
                 {cartList.map((product, index) => (
                   <li
@@ -119,14 +119,16 @@ const CartPage = () => {
                   </li>
                 ))}
               </div>
-              <div className="flex items-center justify-between">
-                <h1 className="text-2xl">
+              <div className="flex flex-col justify-start items-start" >
+              <br />
+                <h1 className="text-lg md:text-2xl">
                   Sub-Total:{" "}
                   <span>
-                    <span>{"\u20B9"}</span> {subTotal}.00
+                    <span>{"\u20B9"}</span> {subTotal.toFixed(2)} 
                   </span>
                 </h1>
-                <button className="bg-green-800 rounded-md text-white p-4">
+                <br />
+                <button className="bg-green-800 rounded-md text-white px-8 py-4">
                   Proceed TO Pay
                 </button>
               </div>
@@ -139,7 +141,7 @@ const CartPage = () => {
             <span className="text-sm md:text-base">Before you checkout</span>
           </div>
 
-          <div className="grid lg:grid-cols-2 product-card xxs:px-4 xl:grid-cols-3  mb-2 md:mb-4 grow gap-2">
+          <div className="grid lg:grid-cols-2 product-card xl:grid-cols-3  mb-2 md:mb-4 grow gap-2">
             {list.map((product, index) => {
               return <ProductCard product={product} key={index} />;
             })}
