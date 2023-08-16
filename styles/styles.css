@@ -1,0 +1,70 @@
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #299a5a;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.nav-link:hover::after {
+  transform: scale(1);
+}
+
+.footer {
+  border-top: 1px solid #d5d5d5;
+  padding-top: 20px;
+}
+
+.product-category-img:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  transition: ease-in 0.3s;
+  transform: scale(1.03);
+}
+
+.detail-pic {
+  background-image: url("/category/landscapes/bowl-landscape.jpg");
+  background-size: cover;
+  height: 56vh;
+  width: 100%;
+  object-position: right;
+  object-fit: cover;
+}
+
+.trending-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: ease-in 0.2s;
+}
+
+.heading {
+  font-family: "Poppins", sans-serif;
+}
+
+.plantation {
+  background-image: url("/homeSlides/planitation black.png");
+  background-size: cover;
+  object-fit: contain;
+  height: 60vh;
+  width: 100vw;
+  object-position: center;
+}
+
+.plantation-mobile {
+  background-image: url("/homeSlides/planitation black.png");
+  background-size: cover;
+  object-fit: cover;
+  height: 50vh;
+  width: 100vw;
+  object-position: center;
+}
+
+.product-item:hover {
+  box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.2);
+}
