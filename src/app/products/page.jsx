@@ -14,6 +14,7 @@ import debounce from "lodash.debounce";
 import { AllProducts } from "../../utils/data/products";
 import { set, update } from "lodash";
 import ProductCard from "../../components/HomeSections/ProductCard";
+import { ToastContainer } from "react-toastify";
 
 const productsCategoryTypes = [
   {

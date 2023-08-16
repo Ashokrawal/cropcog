@@ -1,10 +1,12 @@
-"use state";
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import "../../styles/styles.css";
 import { allCartItems, actionAddProduct } from "../../store/reducers/cartSlice";
 import getSymbolFromCurrency from "currency-symbol-map";
+import { ToastContainer } from "react-toastify";
 
 const ProductCard = ({ product, index }) => {
   const [selectedProduct, setSelectedProduct] = useState([]);
@@ -28,7 +30,8 @@ const ProductCard = ({ product, index }) => {
 
   return (
     <div className="px-2">
-      <div className="card  over bg-white product-card hover:shadow-lg shadow-sm border-black-50w h-fit pb-6 px-2 gap-2 m-1  rounded-lg border-2 border-solid ">
+      <ToastContainer />
+      <div className="card  over bg-white product-card hover:shadow-xl shadow-sm border-black-50w h-fit pb-6 px-2 gap-2 m-1  rounded-lg border-2 border-solid ">
         <div className="flex items-center p-2 px-6 justify-between">
           <Image
             src="/icons/kisspng-vegetarian-cuisine-biryani-indian-cuisine-vegetabl-vegetarian-5b11c235e83b27.8911603315278904859512.png"

@@ -5,6 +5,7 @@ import "../../styles/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   actionAddProduct,
+  actionRemoveAll,
   actionRemoveItem,
   actionRemoveProduct,
   allCartItems,
@@ -14,6 +15,7 @@ import Image from "next/image";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ProductCard from "../../components/HomeSections/ProductCard";
 import { AllProducts } from "../../utils/data/products";
+import { ToastContainer } from "react-toastify";
 
 const RecommendedProducts = AllProducts.filter(
   (each) => each.RecommendedProducts
@@ -38,7 +40,7 @@ const CartPage = () => {
       <div className="pt-6">
         <ul role="list" className=" divide-gray-200">
           {cartList.length === 0 ? (
-            <div className="flex items-center justify-start pt-48 flex-col h-screen ">
+            <div className="flex items-center justify-start pt-48 flex-col h-full pb-36 ">
               <AiOutlineShoppingCart size={40} />
               <h1 className="text-xl font-medium mt-2">Cart is Empty</h1>
               <br />
@@ -50,16 +52,21 @@ const CartPage = () => {
             </div>
           ) : (
             <div>
+              <div className="flex items-center justify-between">
               <h1 className="text-lg lg:text-xl">
           Review Items <span>{cartList.length}</span>
+          <ToastContainer />
         </h1>
+        <button className="bg-red-700 text-white rounded-md p-2 px-2"  onClick={() =>dispatch(actionRemoveAll())}>Remove All</button>
+              </div>
+              
               <div className="py-2 grow flex-1 pt-6">
                 {cartList.map((product, index) => (
                   <li
                     key={product.id}
-                    className="flex bg-white p-4 rounded-lg mb-2 shadow-md "
+                    className="flex bg-white product-item p-4 rounded-lg mb-2 shadow-md "
                   >
-                    <div className=" border border-gray-200 product-item">
+                    <div className=" border border-gray-200">
                       <Image
                         src={product.image}
                         alt={product?.imageAlt}
@@ -135,7 +142,7 @@ const CartPage = () => {
             </div>
           )}
         </ul>
-        <div className="mt-10 px-1 pb-2 ">
+        {cartList.length !== 0 && <div className="mt-10 px-1 pb-2 ">
           <div className="py-2 px-2 ">
             <h1 className="text-xl md:text-3xl">Recommended for you!</h1>
             <span className="text-sm md:text-base">Before you checkout</span>
@@ -146,7 +153,8 @@ const CartPage = () => {
               return <ProductCard product={product} key={index} />;
             })}
           </div>
-        </div>
+        </div> }  
+        
       </div>
     </div>
   );
