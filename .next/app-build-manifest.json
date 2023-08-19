@@ -23,11 +23,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/cart/loading.js"
     ],
-    "/products/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/products/loading.js"
-    ],
     "/products/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -38,6 +33,11 @@
       "static/chunks/main-app.js",
       "static/css/app/products/page.css",
       "static/chunks/app/products/page.js"
+    ],
+    "/products/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/products/loading.js"
     ]
   }
 }

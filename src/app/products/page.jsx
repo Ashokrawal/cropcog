@@ -158,7 +158,7 @@ const ProductsFilter = () => {
   };
 
   return (
-    <div className="products-filter p-6 h-auto ">
+    <div className="products-filter p-4 h-auto ">
       {/* {explore category} */}
 
       <div className="flex items-center justify-between mb-4 pr-5">
@@ -202,7 +202,7 @@ const ProductsFilter = () => {
 
           {/* {Productscard} */}
         </div>
-        <div className="grid md:grid-cols-2 product-card xl:grid-cols-3 xxs:px-4 bg-gray-50 mb-2 md:mb-4 grow gap-2">
+        <div className="grid md:grid-cols-2 product-card xl:grid-cols-3 xxs:px-2 bg-gray-50 mb-2 md:mb-4 grow gap-2">
           {displayedProducts.map((product, index) => (
             <ProductCard product={product} key={index} />
           ))}

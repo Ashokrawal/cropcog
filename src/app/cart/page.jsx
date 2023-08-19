@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   actionAddProduct,
   actionRemoveAll,
-  actionRemoveItem,
-  actionRemoveProduct,
+  actionDecreaseQuantity,
+  actionIncreaseQuantity,
   allCartItems,
   selectTotal,
 } from "../../store/reducers/cartSlice";
@@ -34,6 +34,8 @@ const CartPage = () => {
     );
     setList(filteredProducts);
   }, [cartList]);
+
+
 
   return (
     <div className="md:px-20  bg-gray-200 px-2">
@@ -64,7 +66,7 @@ const CartPage = () => {
                 {cartList.map((product, index) => (
                   <li
                     key={product.id}
-                    className="flex bg-white product-item p-4 rounded-lg mb-2 shadow-md "
+                    className="flex bg-white product-item p-5 rounded-lg mb-2 shadow-md "
                   >
                     <div className=" border border-gray-200">
                       <Image
@@ -75,58 +77,44 @@ const CartPage = () => {
                         className=""
                       />
                     </div>
-                    <div className="flex flex-col flex-1 ml-4">
-                      <div>
-                        <div className="grid w-full grid-cols-2 lg:grid-cols-3 text-base font-medium text-gray-900">
+                    <div className="flex ml-4 w-full" >
+                        <div className="text-base w-full flex flex-col gap-2 font-medium text-gray-900">
                           <span className="">{product?.title}</span>
-                          <p className="flex flex-row-reverse">
-                            Rs. {product.price}
+                          <p className="text-gray-500">{product.quantity}Gms</p>
+                          <div className="flex items-center justify-between w-full">
+                          <p className="flex">
+                            Rs. {product.subTotal}
                           </p>
-                        </div>
-
-                        <div className="flex  justify-between flex-1 text-sm">
-                          <div className="flex items-center justify-center gap-3 transition-all">
+                          <div className="flex items-center border-2 border-solid justify-center gap-2.5 w-28">
                             {product?.quantity >= 2 && (
                               <button
-                                className="px-2 text-xl font-bold hover:scale-110"
+                                className="text-xl font-bold hover:text-red-600"
                                 onClick={() => {
-                                  dispatch(actionDecrementQuantity(product));
+                                  dispatch(actionDecreaseQuantity(product));
                                 }}
                               >
                                 -
                               </button>
                             )}
-                            <p className="text-gray-500">
-                              Qty {product.quantity}
-                            </p>
+                            <div className="text-gray-500  py-1 px-5 bg-gray-200">
+                              {product.cartQuantity}
+                            </div>
                             <button
-                              className="px-2 text-xl font-bold hover:scale-110"
+                              className="text-xl hover:text-green-600 font-bold "
                               onClick={() => {
-                                dispatch(actionUpdateQuantity(product));
+                                dispatch(actionIncreaseQuantity(product));
                               }}
                             >
                               +
                             </button>
                           </div>
-                          <div className="flex">
-                            <button
-                              onClick={() => {
-                                dispatch(actionRemoveProduct(product));
-                              }}
-                              type="button"
-                              className="font-medium text-indigo-600 hover:text-indigo-500"
-                            >
-                              {" "}
-                              Remove
-                            </button>
                           </div>
                         </div>
-                      </div>
                     </div>
                   </li>
                 ))}
               </div>
-              <div className="flex flex-col justify-start items-start" >
+              <div className="flex flex-col justify-start items-start " >
               <br />
                 <h1 className="text-lg md:text-2xl">
                   Sub-Total:{" "}

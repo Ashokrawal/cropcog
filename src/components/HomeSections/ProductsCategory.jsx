@@ -83,7 +83,7 @@ const ProductsCategory = () => {
       <h1 className="text-red-800 font-extrabold text-xl lg:text-2xl">
         Explore By Category
       </h1>
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 grow start:gap-2  mt-6 ">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 grow start:gap-4  mt-6 ">
         {categoryImages?.map((each) => (
           <Link
             href="/products/"
@@ -91,7 +91,7 @@ const ProductsCategory = () => {
             onClick={() => handleClick(each.name)}
             className="flex flex-col object-fill items-center rounded-md justify-center "
           >
-            <div className="relative xsm:hidden h-24 w-24">
+            <div className="relative xsm:hidden h-20 w-20">
               <Image
                 src={each.image}
                 layout="fill"
