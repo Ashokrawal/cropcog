@@ -9,6 +9,7 @@ import {
   actionDecreaseQuantity,
   actionIncreaseQuantity,
   allCartItems,
+
   selectTotal,
 } from "../../store/reducers/cartSlice";
 import Image from "next/image";
@@ -21,12 +22,16 @@ const RecommendedProducts = AllProducts.filter(
   (each) => each.RecommendedProducts
 );
 
+
+
 const CartPage = () => {
   const cartList = useSelector(allCartItems);
   const dispatch = useDispatch();
   const [list, setList] = useState([]);
-  const subTotal = useSelector(selectTotal);
-  const eligibleForFreeDelivery = subTotal >= 499 ? "FREE" : 99
+  const totalCartAmount = useSelector(selectTotal);
+  const eligibleForFreeDelivery = totalCartAmount >=  499 ? "FREE" : <span>{"\u20B9"}99</span>
+
+
 
   useEffect(() => {
     const filteredProducts = RecommendedProducts.filter(
@@ -86,7 +91,7 @@ const CartPage = () => {
                           <div className="flex items-center justify-between w-full">
                           <p className="flex">
                           <span className="mr-2">{"\u20B9"}</span>
-                              {product.subTotal.toFixed(2)}
+                              {product.subTotal}
                           </p>
                           <div className="flex items-center border-2 border-solid justify-center gap-2.5 w-28">
                             {product?.quantity >= 2 && (
@@ -143,7 +148,7 @@ const CartPage = () => {
                 <h1>Bill Details</h1> 
                 <div>
                 <span>{"\u20B9"}</span>
-                <span className="font-bold text-sm">{subTotal.toFixed(2)} </span>
+                <span className="font-bold text-sm">{totalCartAmount} </span>
                 </div>
               </div>
 
@@ -152,10 +157,10 @@ const CartPage = () => {
                   Sub-Total:{" "}</h1>
                   <div className="flex gap-2">
                   <span className="text-gray-500 text-sm">{"\u20B9"}<span className="text-gray-500 line-through">
-                    {subTotal + 50}
+                    {totalCartAmount + 50}
                   </span></span>
                     <span className="font-bold text-sm">{"\u20B9"}<span>
-                    {subTotal.toFixed(2)}</span></span> 
+                    {totalCartAmount}</span></span> 
                     </div>                  
                   </div>
 
@@ -171,14 +176,14 @@ const CartPage = () => {
                 <h1>Sub Total</h1> 
                 <div>
                 <span>{"\u20B9"}</span>
-                <span className="font-bold text-sm">{subTotal.toFixed(2)} </span>
+                <span className="font-bold text-sm">{totalCartAmount} </span>
                 </div>
               </div>                  
                   
               <div className="flex items-center justify-between w-full ">
                 <h1>Delivery Charges</h1> 
                 <div>
-                <span>{"\u20B9"}</span>
+                
                 <span className="font-bold text-sm">{eligibleForFreeDelivery}</span>
                 </div>
               </div>
@@ -188,7 +193,7 @@ const CartPage = () => {
                 <span>Total Payable</span> 
                 <div>
                 <span className="text-base">{"\u20B9"}</span>
-                <span className="font-bold text-base">{subTotal.toFixed(2)}</span>
+                <span className="font-bold text-base">{totalCartAmount}</span>
                 </div>
               </div>
 

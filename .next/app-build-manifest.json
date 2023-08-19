@@ -12,11 +12,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/cart/page": [
+    "/products/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/cart/page.css",
-      "static/chunks/app/cart/page.js"
+      "static/chunks/app/products/error.js"
     ],
     "/products/loading": [
       "static/chunks/webpack.js",
@@ -34,10 +33,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/cart/loading.js"
     ],
-    "/products/error": [
+    "/cart/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/products/error.js"
+      "static/css/app/cart/page.css",
+      "static/chunks/app/cart/page.js"
     ]
   }
 }

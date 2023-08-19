@@ -55,6 +55,8 @@ hideProgressBar:true,
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
 
+    
+
     // {"remove Product"}
     actionRemoveProduct: (state, action) => {
       let itemIndex = state.cart.findIndex(
@@ -171,7 +173,8 @@ export const {
 // Selectors - This is how we pull information from the Global store slice
 export const allCartItems = (state) => state.cartSlice.cart;
 export const selectTotal = (state) =>
-  state.cartSlice.cart.reduce((total, item) => total + item.price, 0);
- 
+  state.cartSlice.cart.reduce((total, item) => total + item.currentPrice, 0);
+
+  ;
 
 export default cartSlice.reducer;
