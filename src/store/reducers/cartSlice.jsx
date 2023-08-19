@@ -29,7 +29,7 @@ export const cartSlice = createSlice({
 
         //Calculate the subtotal price of each "multiple" product
         const subTotal =
-          state.cart[itemIndex].price *
+          state.cart[itemIndex].currentPrice *
           state.cart[itemIndex].cartQuantity;
         state.cart[itemIndex].subTotal = subTotal;
 

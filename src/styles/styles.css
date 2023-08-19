@@ -77,3 +77,10 @@
 
   transition:ease-in-out 0.5s;
 }
+
+.payment {
+  position:absolute;
+left:0;
+bottom:0;
+right:0;
+}

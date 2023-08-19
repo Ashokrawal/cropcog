@@ -12,12 +12,25 @@ const ProductCard = ({ product, index }) => {
   const [selectedProduct, setSelectedProduct] = useState([]);
   const cartList = useSelector(allCartItems);
   const dispatch = useDispatch();
+  const [selectedQuantity,setSelectedQuantity] = useState(100);
+  const [current,setCurrent] = useState(product.currentPrice);
+
 
   const handleAddProduct = () => {
     // const currentSelectedQuantity = product.quantity[0]; // Initial selected quantity
     // const currentSelectedPrice = product.price[0]; // Initial selected price
     dispatch(actionAddProduct(product));
   };
+
+  const handleQuantityChange = e => {
+    const newQuantity = parseInt(e.target.value)
+    setSelectedQuantity(newQuantity);
+
+    const basePrice = (product.currentPrice / 50)  ;
+    const newCurrentPrice = basePrice * newQuantity;
+    setCurrent(newCurrentPrice);
+  }
+  
 
   let rupee = new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -57,11 +70,9 @@ const ProductCard = ({ product, index }) => {
           <div className="h-auto w-full flex py-4 items-start flex-col gap-2 xxs:px-2  xs:justify-center">
             <h1 className="font-medium">{product.title}</h1>
             {/* <span className="text-gray-500">100 Gms</span> */}
-            <select className="bg-gray-200 rounded-lg px-2 py-1 text-gray-700">
-              <option>100gms</option>
-              <option>500gms</option>
-              <option>1000gms</option>
-            </select>
+
+            <span className="text-gray-500">250Gms</span>
+
             <span className="text-sm">
               <span className="text-base font-medium">Rich in </span>
               {product.description}
@@ -76,7 +87,7 @@ const ProductCard = ({ product, index }) => {
                 </div>
                 <div>
                   <span className="">{"\u20B9"}</span>
-                  <span className="">{product.currentPrice}</span>
+                  <span className="">{current}</span>
                 </div>
               </div>
               <div>
