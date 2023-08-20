@@ -126,8 +126,8 @@ const CartPage = () => {
             </div>
           )}
         </ul>
-        {cartList.length !== 0 && <div className="mt-10 px-1 pb-2 ">
-          <div className="py-2 px-2 ">
+        {cartList.length !== 0 && <div className="mt-10 pb-2 ">
+          <div className="py-2">
             <h1 className="text-xl md:text-3xl">Recommended for you!</h1>
             <span className="text-sm md:text-base">Before you checkout</span>
           </div>
@@ -142,9 +142,9 @@ const CartPage = () => {
         
 
       </div>
-      {cartList.length !== 0 && <div className="flex flex-col shadow-lg md:px-8 px-6 rounded-t-2xl items-start text-sm bg-white gap-1 pb-6" >
+      {cartList.length !== 0 && <div className="flex flex-col gap-3 shadow-lg md:px-8 px-6 rounded-t-2xl items-start text-normal bg-white gap-1 pb-6" >
               <br />
-              <div className="flex items-center justify-between w-full ">
+              <div className="flex items-center gap-4 justify-between w-full ">
                 <h1>Bill Details</h1> 
                 <div>
                 <span>{"\u20B9"}</span>
@@ -171,14 +171,7 @@ const CartPage = () => {
                       <span className="text-sm text-green-700">50</span>
                     </div>
                   </div>
-
-                  <div className="flex items-center justify-between w-full ">
-                <h1>Sub Total</h1> 
-                <div>
-                <span>{"\u20B9"}</span>
-                <span className="font-bold text-sm">{totalCartAmount} </span>
-                </div>
-              </div>                  
+                 
                   
               <div className="flex items-center justify-between w-full ">
                 <h1>Delivery Charges</h1> 
@@ -190,7 +183,7 @@ const CartPage = () => {
 
 
               <div className="flex mt-2 pt-2 items-center text-lg justify-between w-full border-solid border-t-2 ">
-                <span>Total Payable</span> 
+                <span className="md:text-xl ">Total Payable</span> 
                 <div>
                 <span className="text-base">{"\u20B9"}</span>
                 <span className="font-bold text-base">{totalCartAmount}</span>
@@ -199,8 +192,8 @@ const CartPage = () => {
 
              
                 <br />
-                <button className="bg-green-800 rounded-md text-white md:px-8 md:py-4 md:w-fit w-full py-4">
-                  Proceed TO Pay
+                <button className="bg-green-800 font-black hover:bg-green-600 rounded-md text-white md:px-8 md:py-4 md:w-fit w-full py-4">
+                  Proceed To Pay
                 </button>
                 
               </div>}

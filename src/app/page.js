@@ -18,7 +18,7 @@ export default function Home() {
         <ProductsCategory />
         <EatHealthy />
         <TrendingDeals />
-        <ToastContainer />
+        <ToastContainer  />
         <AnanthAgriPage />
         <BestSellers />
         <Faqs />

@@ -17,6 +17,9 @@ export const cartSlice = createSlice({
   name: "cartSlice",
   initialState,
   reducers: {
+    hydrate:(state,action) => {
+      return action.payload
+    },
     // {"add product"}
 
     actionAddProduct(state, action) {
@@ -45,6 +48,7 @@ closeOnClick:true
           cartQuantity: 1,
           subTotal:action.payload.price
         };
+
         state.cart.push(tempProduct);
         toast.success(`${action.payload.title} added to cart`,{
           autoClose:800,
@@ -53,6 +57,26 @@ hideProgressBar:true,
         });
       }
       localStorage.setItem("cart", JSON.stringify(state.cart));
+    },
+
+     actionIncreaseQuantity: (state, action) => {
+      const itemIndex = state.cart.findIndex((each)=>each.id === action.payload.id);
+
+      if(state.cart[itemIndex]){
+        if(state.cart[itemIndex].cartQuantity >=1){
+          state.cart[itemIndex].cartQuantity +=1 ;
+
+          const subTotal = state.cart[itemIndex].price * state.cart[itemIndex].cartQuantity;
+          state.cart[itemIndex].subTotal = subTotal;
+        }
+        localStorage.setItem('cart',JSON.stringify(state.cart));
+      }else{
+        toast.error('Click on Add To Cart',{
+          autoClose:800,
+hideProgressBar:true,
+closeOnClick:true
+        })
+      }
     },
 
     
@@ -92,25 +116,7 @@ closeOnClick:true
 
     // {updateQuantity}
 
-    actionIncreaseQuantity: (state, action) => {
-      const itemIndex = state.cart.findIndex((each)=>each.id === action.payload.id);
-
-      if(state.cart[itemIndex]){
-        if(state.cart[itemIndex].cartQuantity >=1){
-          state.cart[itemIndex].cartQuantity +=1 ;
-
-          const subTotal = state.cart[itemIndex].price * state.cart[itemIndex].cartQuantity;
-          state.cart[itemIndex].subTotal = subTotal;
-        }
-        localStorage.setItem('cart',JSON.stringify(state.cart));
-      }else{
-        toast.error('Click on Add To Cart',{
-          autoClose:800,
-hideProgressBar:true,
-closeOnClick:true
-        })
-      }
-    },
+   
 
     actionDecreaseQuantity(state, action) {
       const itemIndex = state.cart.findIndex(
