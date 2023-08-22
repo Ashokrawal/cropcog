@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiOutlineShoppingCart, AiOutlineRight } from "react-icons/ai";
 
 const CheckoutPage = () => {
+  const [userData, setUserData] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
+
   };
 
   // start: "100px",
@@ -21,27 +23,27 @@ const CheckoutPage = () => {
 
   return (
     <div className="h-auto px-4 xl:px-20 w-full mb-10">
-      <div className="flex items-center text-base md:text-lg justify-center md:gap-1 py-4">
+      <div className="flex items-center text-base md:text-lg justify-center md:gap-1 py-6">
         <span>Cart</span>
         <AiOutlineRight />
-        <span className="font-extrabold">Information</span>
+        <span className="font-medium">Information</span>
         <AiOutlineRight />
         <span>Shipping</span>
         <AiOutlineRight />
         <span>Payment</span>
       </div>
       <form
-        className="md:px-32 lg:px-52 sm:px-10 xl:px-60 sm:gap-3 gap-2 flex flex-col"
+        className="md:px-40 lg:px-64 sm:px-10 xl:px-86 xxl:px-96 sm:gap-3 gap-2 flex flex-col"
         onSubmit={handleSubmit}
       >
-        <h1 className="font-bold">Contact</h1>
+        <h1 className="font-medium">Contact</h1>
         <input
           className="input w-full"
           type="text"
           required
           placeholder="Email or mobile number"
         />
-        <h1 className="font-bold">Shipping Address</h1>
+        <h1 className="font-medium">Shipping Address</h1>
         <div className="flex items-center sm:flex-row flex-col justify-start sm:justify-between gap-2">
           <input
             className="input w-full sm:w-1/2"

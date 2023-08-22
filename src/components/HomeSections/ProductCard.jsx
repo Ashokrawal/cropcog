@@ -16,24 +16,8 @@ const ProductCard = ({ product, index }) => {
   const [current, setCurrent] = useState(product.currentPrice);
 
   const handleAddProduct = () => {
-    // const currentSelectedQuantity = product.quantity[0]; // Initial selected quantity
-    // const currentSelectedPrice = product.price[0]; // Initial selected price
     dispatch(actionAddProduct(product));
   };
-
-  const handleQuantityChange = (e) => {
-    const newQuantity = parseInt(e.target.value);
-    setSelectedQuantity(newQuantity);
-
-    const basePrice = product.currentPrice / 50;
-    const newCurrentPrice = basePrice * newQuantity;
-    setCurrent(newCurrentPrice);
-  };
-
-  let rupee = new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-  });
 
   useEffect(() => {
     console.log(cartList);

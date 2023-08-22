@@ -56,7 +56,7 @@ const CartPage = () => {
             ) : (
               <div>
                 <div className="flex items-center text-base md:text-lg justify-center md:gap-1 pb-4">
-                  <span className="font-black">Cart</span>
+                  <span className="font-medium">Cart</span>
                   <AiOutlineRight />
                   <span>Information</span>
                   <AiOutlineRight />
@@ -158,7 +158,9 @@ const CartPage = () => {
               <h1>Bill Details</h1>
               <div>
                 <span>{"\u20B9"}</span>
-                <span className="font-bold text-sm">{totalCartAmount} </span>
+                <span className="font-bold text-sm">
+                  {totalCartAmount - 99}{" "}
+                </span>
               </div>
             </div>
 

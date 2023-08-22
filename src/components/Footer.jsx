@@ -176,7 +176,7 @@ const Footer = () => {
             </h1>
             <div
               className="shadow-xl"
-              style={{ boxShadow: "0px 2px 8px rgba(0,0,0,0.1" }}
+              style={{ boxShadow: "0px 2px 8px rgba(0,0,0,0.3" }}
             >
               <input
                 placeholder="Email"

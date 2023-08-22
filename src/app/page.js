@@ -8,9 +8,6 @@ import Faqs from "/src/components/Faqs.jsx";
 import Hero from "../components/Hero.jsx";
 import EatHealthy from "../components/EatHealthy";
 import AnanthAgriPage from "../components/AnathAgriPage";
-import { ToastContainer } from "react-toastify";
-
-import Reveal from '../components/Reveal.tsx'
 
 export default function Home() {
   return (
@@ -20,7 +17,6 @@ export default function Home() {
         <ProductsCategory />
         <EatHealthy />
         <TrendingDeals />
-        <ToastContainer  />
         <AnanthAgriPage />
         <BestSellers />
         <Faqs />
