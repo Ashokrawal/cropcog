@@ -12,9 +12,8 @@ const ProductCard = ({ product, index }) => {
   const [selectedProduct, setSelectedProduct] = useState([]);
   const cartList = useSelector(allCartItems);
   const dispatch = useDispatch();
-  const [selectedQuantity,setSelectedQuantity] = useState(100);
-  const [current,setCurrent] = useState(product.currentPrice);
-
+  const [selectedQuantity, setSelectedQuantity] = useState(100);
+  const [current, setCurrent] = useState(product.currentPrice);
 
   const handleAddProduct = () => {
     // const currentSelectedQuantity = product.quantity[0]; // Initial selected quantity
@@ -22,15 +21,14 @@ const ProductCard = ({ product, index }) => {
     dispatch(actionAddProduct(product));
   };
 
-  const handleQuantityChange = e => {
-    const newQuantity = parseInt(e.target.value)
+  const handleQuantityChange = (e) => {
+    const newQuantity = parseInt(e.target.value);
     setSelectedQuantity(newQuantity);
 
-    const basePrice = (product.currentPrice / 50)  ;
+    const basePrice = product.currentPrice / 50;
     const newCurrentPrice = basePrice * newQuantity;
     setCurrent(newCurrentPrice);
-  }
-  
+  };
 
   let rupee = new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -42,7 +40,7 @@ const ProductCard = ({ product, index }) => {
   }, [cartList]);
 
   return (
-    <div className="px-2" >
+    <div className="px-2">
       <ToastContainer />
       <div className="card over bg-white product-card hover:shadow-xl shadow-sm border-black-50w  pb-6 px-2 gap-2 m-1  rounded-lg border-2 border-solid ">
         <div className="flex items-center p-2 px-6 justify-between">
@@ -53,7 +51,7 @@ const ProductCard = ({ product, index }) => {
             loading="lazy"
             alt={product.title}
             className="product-item transition-opacity opacity-0 duration-[2s]"
-            onLoadingComplete={(img)=> img.classList.remove('opacity-0')}
+            onLoadingComplete={(img) => img.classList.remove("opacity-0")}
           />
 
           <h1 className="text-red-700 discount font-extrabold ">{`GET ${product.discount} OFF`}</h1>
@@ -68,7 +66,7 @@ const ProductCard = ({ product, index }) => {
               loading="lazy"
               width={product.width}
               // className=""
-            onLoadingComplete={(img)=> img.classList.remove('opacity-0')}
+              onLoadingComplete={(img) => img.classList.remove("opacity-0")}
               alt={product.title}
             />
           </div>

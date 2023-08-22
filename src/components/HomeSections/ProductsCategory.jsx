@@ -109,7 +109,7 @@ const ProductsCategory = () => {
                 objectFit="cover"
                 alt={each.name}
                 // className=""
-            onLoadingComplete={(img)=> img.classList.remove('opacity-0')}
+                onLoadingComplete={(img) => img.classList.remove("opacity-0")}
                 className="rounded-full shadow-md items-center product-category-img max-w-full h-auto object-rounded product-item transition-opacity opacity-0 duration-[0.8s]"
               />
             </div>

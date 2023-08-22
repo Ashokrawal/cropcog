@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const EatHealthy = () => {
   return (
     <section className=" grow gap-10 mt-10 mb-6">

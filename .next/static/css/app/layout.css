@@ -78,21 +78,34 @@
 .product-item:hover {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   transform: scale(1.003);
-  transition:ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
 }
 
 .product-card:hover {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 
-  transition:ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
 }
 
 .payment {
-  position:absolute;
-left:0;
-bottom:0;
-right:0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
+
+.input {
+  border-color: #a19e9e;
+  border-width: 1.4px;
+  border-radius: 4px;
+  padding: 0.8rem;
+  color: black;
+}
+.input:focus {
+  border-width: 1.8px;
+  outline: black;
+}
+
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./node_modules/tailwindcss/tailwind.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************/
@@ -1629,24 +1642,12 @@ video {
 
 @media (min-width: 830px) {
 
-  .md\:bottom-28 {
-    bottom: 7rem;
+  .md\:bottom-36 {
+    bottom: 9rem;
   }
 
   .md\:left-2 {
     left: 0.5rem;
-  }
-
-  .md\:bottom-32 {
-    bottom: 8rem;
-  }
-
-  .md\:bottom-20 {
-    bottom: 5rem;
-  }
-
-  .md\:bottom-36 {
-    bottom: 9rem;
   }
 
   .md\:mb-4 {
@@ -1676,6 +1677,10 @@ video {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:px-1 {
@@ -3833,24 +3838,12 @@ video {
 }
 @media (min-width: 830px) {
 
-  .md\:bottom-28 {
-    bottom: 7rem;
+  .md\:bottom-36 {
+    bottom: 9rem;
   }
 
   .md\:left-2 {
     left: 0.5rem;
-  }
-
-  .md\:bottom-32 {
-    bottom: 8rem;
-  }
-
-  .md\:bottom-20 {
-    bottom: 5rem;
-  }
-
-  .md\:bottom-36 {
-    bottom: 9rem;
   }
 
   .md\:mb-4 {
@@ -3880,6 +3873,10 @@ video {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .md\:px-1 {

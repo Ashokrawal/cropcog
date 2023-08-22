@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Product {
-  id                  String  @id @default(auto()) @map("_id") @db.ObjectId
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
   RecommendedProducts Boolean
   bestSellerDeals     Boolean
   cartHeight          Int
@@ -25,7 +25,7 @@ model Product {
   trendingDeals       Boolean
   width               Int
   createAt            DateTime @default(now())
-  updatedAt DateTime  @updatedAt
+  updatedAt           DateTime @updatedAt
 
   @@map("products")
 }
