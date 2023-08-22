@@ -35,6 +35,7 @@ const Footer = () => {
     <>
       {/* <hr className="mt-10" /> */}
       <main className="md:w-1/4 w-screen">
+        <hr />
         <footermobile className="flex justify-center gap-2 py-10 items-center md:hidden flex-col w-screen">
           <Link
             className="font-bold text-xl flex flex-col items-center"
@@ -42,6 +43,7 @@ const Footer = () => {
           >
             Organic Agenda
           </Link>
+
           <div className="px-2 flex mt-10 flex-wrap gap-2 items-center gap-1 justify-center grow flex-col">
             <p className="text-lg font-medium">Contact</p>
             <div className="flex items-center">

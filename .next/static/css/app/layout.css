@@ -95,15 +95,12 @@
 }
 
 .input {
-  border-color: #a19e9e;
+  border-color: #b0afaf;
   border-width: 1.4px;
   border-radius: 4px;
   padding: 0.8rem;
   color: black;
-}
-.input:focus {
-  border-width: 1.8px;
-  outline: black;
+  font-size: small;
 }
 
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1590,6 +1587,32 @@ video {
     left: 0.5rem;
   }
 
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
+  .sm\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1703,6 +1726,11 @@ video {
     padding-right: 5rem;
   }
 
+  .md\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1780,6 +1808,11 @@ video {
     padding-right: 2.5rem;
   }
 
+  .lg\:px-52 {
+    padding-left: 13rem;
+    padding-right: 13rem;
+  }
+
   .lg\:pl-10 {
     padding-left: 2.5rem;
   }
@@ -1817,6 +1850,16 @@ video {
 
   .xl\:gap-40 {
     gap: 10rem;
+  }
+
+  .xl\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .xl\:px-60 {
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
 }
 
@@ -3788,6 +3831,32 @@ video {
     left: 0.5rem;
   }
 
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
+  .sm\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3899,6 +3968,11 @@ video {
     padding-right: 5rem;
   }
 
+  .md\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3975,6 +4049,11 @@ video {
     padding-right: 2.5rem;
   }
 
+  .lg\:px-52 {
+    padding-left: 13rem;
+    padding-right: 13rem;
+  }
+
   .lg\:pl-10 {
     padding-left: 2.5rem;
   }
@@ -4011,6 +4090,16 @@ video {
 
   .xl\:gap-40 {
     gap: 10rem;
+  }
+
+  .xl\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .xl\:px-60 {
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
 }
 @media (min-width: 1536px) {

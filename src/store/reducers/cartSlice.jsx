@@ -6,11 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
-  cart:
-    typeof window !== "undefined" &&
-    (localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : []),
+  cart: [],
   totalAmount: 0,
 };
 
@@ -18,9 +14,6 @@ export const cartSlice = createSlice({
   name: "cartSlice",
   initialState,
   reducers: {
-    hydrate: (state, action) => {
-      return action.payload;
-    },
     // {"add product"}
 
     actionAddProduct(state, action) {
@@ -47,7 +40,7 @@ export const cartSlice = createSlice({
         const tempProduct = {
           ...action.payload,
           cartQuantity: 1,
-          subTotal: action.payload.price,
+          subTotal: action.payload.currentPrice,
         };
 
         state.cart.push(tempProduct);
@@ -57,7 +50,6 @@ export const cartSlice = createSlice({
           hideProgressBar: true,
         });
       }
-      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
 
     actionIncreaseQuantity: (state, action) => {
@@ -70,10 +62,10 @@ export const cartSlice = createSlice({
           state.cart[itemIndex].cartQuantity += 1;
 
           const subTotal =
-            state.cart[itemIndex].price * state.cart[itemIndex].cartQuantity;
+            state.cart[itemIndex].currentPrice *
+            state.cart[itemIndex].cartQuantity;
           state.cart[itemIndex].subTotal = subTotal;
         }
-        localStorage.setItem("cart", JSON.stringify(state.cart));
       } else {
         toast.error("Click on Add To Cart", {
           autoClose: 800,
@@ -104,14 +96,12 @@ export const cartSlice = createSlice({
         hideProgressBar: true,
         closeOnClick: true,
       });
-      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
 
     // { remove all}
 
     actionRemoveAll: (state, action) => {
       state.cart = [];
-      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
 
     // {updateQuantity}
@@ -130,7 +120,6 @@ export const cartSlice = createSlice({
           state.cart[itemIndex].subTotal = subTotal;
 
           //localStorage: Update state and push to localStorage
-          localStorage.setItem("cart", JSON.stringify(state.cart));
         }
 
         //!: Delete the product from cart if the count is below 1
@@ -139,9 +128,6 @@ export const cartSlice = createSlice({
             (cartItem) => cartItem.id !== action.payload.id
           );
           state.cart = nextCartItems;
-
-          //localStorage: Update state and push to localStorage
-          localStorage.setItem("cart", JSON.stringify(state.cart));
 
           //Notification: Alert a product remove in product quantity
           toast.error(`Removed ${action.payload.title}`, {
@@ -171,7 +157,16 @@ export const {
 
 // Selectors - This is how we pull information from the Global store slice
 export const allCartItems = (state) => state.cartSlice.cart;
-export const selectTotal = (state) =>
-  state.cartSlice.cart.reduce((total, item) => total + item.currentPrice, 0);
+export const selectTotal = (state) => {
+  const cartTotal = state.cartSlice.cart.reduce(
+    (total, item) => total + item.subTotal,
+    0
+  );
+  if (cartTotal >= 499) {
+    return cartTotal;
+  } else {
+    return cartTotal + 99;
+  }
+};
 
 export default cartSlice.reducer;

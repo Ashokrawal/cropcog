@@ -1,11 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  allCartItems,
-  actionAddProduct,
-  actionUpdateQuantity,
-  allQuantityItems,
-} from "../../store/reducers/cartSlice";
+import { allCartItems, actionAddProduct } from "../../store/reducers/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import "./products.module.css";
@@ -84,8 +79,6 @@ const ProductsFilter = () => {
   const [selectedQuantity, setSelectedQuantity] = useState({});
   const allProductsList = AllProducts;
 
-
-
   const cartList = useSelector(allCartItems);
 
   // {Filter For Input Radio}
@@ -109,7 +102,6 @@ const ProductsFilter = () => {
         : allProductsList.filter(
             (product) => product.category === selectedCategory
           );
-
   };
 
   // {Filtering For Search Input}
@@ -193,7 +185,6 @@ const ProductsFilter = () => {
           {filteredListCategory.map((product, index) => (
             <ProductCard product={product} key={index} />
           ))}
-          
         </div>
       </main>
     </div>
