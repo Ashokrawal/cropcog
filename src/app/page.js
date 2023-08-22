@@ -10,6 +10,8 @@ import EatHealthy from "../components/EatHealthy";
 import AnanthAgriPage from "../components/AnathAgriPage";
 import { ToastContainer } from "react-toastify";
 
+import Reveal from '../components/Reveal.tsx'
+
 export default function Home() {
   return (
     <>

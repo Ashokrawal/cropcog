@@ -23,7 +23,6 @@ const RecommendedProducts = AllProducts.filter(
 );
 
 
-
 const CartPage = () => {
   const cartList = useSelector(allCartItems);
   const dispatch = useDispatch();
@@ -80,6 +79,7 @@ const CartPage = () => {
                         src={product.image}
                         alt={product?.imageAlt}
                         height={product.cartHeight}
+                        loading="lazy"
                         width={product.cartWidth}
                         className=""
                       />
@@ -192,17 +192,14 @@ const CartPage = () => {
 
              
                 <br />
+                <Link href='/checkout'>
                 <button className="bg-green-800 font-black hover:bg-green-600 rounded-md text-white md:px-8 md:py-4 md:w-fit w-full py-4">
                   Proceed To Pay
                 </button>
+                </Link>
                 
-              </div>}
-      
-
-             
+              </div>}             
     </div>
-   
-   
     </>
   );
 };

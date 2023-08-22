@@ -123,6 +123,7 @@ const page = () => {
                 className="flex items-center flex-col   justify-center"
               >
                 <Image
+                loading="lazy"
                   height={each.height}
                   width={each.width}
                   alt={each.name}

@@ -42,7 +42,7 @@ const ProductCard = ({ product, index }) => {
   }, [cartList]);
 
   return (
-    <div className="px-2">
+    <div className="px-2" >
       <ToastContainer />
       <div className="card over bg-white product-card hover:shadow-xl shadow-sm border-black-50w  pb-6 px-2 gap-2 m-1  rounded-lg border-2 border-solid ">
         <div className="flex items-center p-2 px-6 justify-between">
@@ -50,8 +50,10 @@ const ProductCard = ({ product, index }) => {
             src="/icons/kisspng-vegetarian-cuisine-biryani-indian-cuisine-vegetabl-vegetarian-5b11c235e83b27.8911603315278904859512.png"
             height={22}
             width={22}
+            loading="lazy"
             alt={product.title}
-            className="product-item"
+            className="product-item transition-opacity opacity-0 duration-[2s]"
+            onLoadingComplete={(img)=> img.classList.remove('opacity-0')}
           />
 
           <h1 className="text-red-700 discount font-extrabold ">{`GET ${product.discount} OFF`}</h1>
@@ -61,9 +63,12 @@ const ProductCard = ({ product, index }) => {
           <div>
             <Image
               src={product.image}
-              className="pl-1 object-cover object-center max-w-full h-auto"
+              className="pl-1 object-cover object-center max-w-full h-auto  transition-opacity opacity-0 duration-[2s]"
               height={product.height}
+              loading="lazy"
               width={product.width}
+              // className=""
+            onLoadingComplete={(img)=> img.classList.remove('opacity-0')}
               alt={product.title}
             />
           </div>

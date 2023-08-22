@@ -83,19 +83,8 @@ const ProductsFilter = () => {
   const dispatch = useDispatch();
   const [selectedQuantity, setSelectedQuantity] = useState({});
   const allProductsList = AllProducts;
-  const productsPerPage = 7;
-  const [displayedProducts, setDisplayedProducts] = useState(
-    filteredListCategory.slice(0, productsPerPage)
-  );
 
-  const handleViewMore = () => {
-    const currentlyDisplayedCount = displayedProducts.length;
-    const nextDisplayedProducts = filteredListCategory.slice(
-      0,
-      currentlyDisplayedCount + productsPerPage
-    );
-    setDisplayedProducts(nextDisplayedProducts);
-  };
+
 
   const cartList = useSelector(allCartItems);
 
@@ -121,8 +110,6 @@ const ProductsFilter = () => {
             (product) => product.category === selectedCategory
           );
 
-    // Update the displayed products to show the first 'productsPerPage' items
-    setDisplayedProducts(updatedCategoryList.slice(0, productsPerPage));
   };
 
   // {Filtering For Search Input}
@@ -158,10 +145,10 @@ const ProductsFilter = () => {
   };
 
   return (
-    <div className="products-filter p-4 h-auto ">
+    <div className="products-filter p-2 h-auto ">
       {/* {explore category} */}
 
-      <div className="flex items-center justify-between mb-4 pr-5">
+      <div className="flex items-center justify-between mb-4 pt-4 pr-5">
         <h1 className="mb-4 font-normal text-xs md:text-lg">
           Home / All Products
         </h1>
@@ -202,21 +189,11 @@ const ProductsFilter = () => {
 
           {/* {Productscard} */}
         </div>
-        <div className="grid md:grid-cols-2 product-card xl:grid-cols-3 xxs:px-2 bg-gray-50 mb-2 md:mb-4 grow gap-2">
-          {displayedProducts.map((product, index) => (
+        <div className="grid md:grid-cols-2 product-card xl:grid-cols-2 xxl:grid-cols-3 xxs:px-2 bg-gray-50 md:mb-4 grow gap-2">
+          {filteredListCategory.map((product, index) => (
             <ProductCard product={product} key={index} />
           ))}
-          <div className="flex items-center justify-center">
-            {filteredListCategory.length > displayedProducts.length && (
-              <div className="flex items-center mt-4 justify-center"></div>
-            )}
-            <button
-              className="bg-green-50 shadow-sm hover:bg-green-800 mt-2 hover:text-white py-3 px-6 rounded-lg"
-              onClick={handleViewMore}
-            >
-              View more
-            </button>
-          </div>
+          
         </div>
       </main>
     </div>

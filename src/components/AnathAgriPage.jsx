@@ -3,14 +3,14 @@ import Link from "next/link";
 
 const AnathAgriPage = () => {
   return (
-    <div>
-      <section className="hidden sm:flex">
+    <div cls>
+      <section className="hidden xs:flex">
         <div
           href="https://ananthagriservices.in/"
-          target="_blank"
+          target="_blank" 
           className="plantation"
         >
-          <h1 className="flex justify-center text-white font-black drop-shadow-2xl text-5xl sm:pt-44 sm:text-2xl md:text-4xl xsm:text-xl">
+          <h1 className="flex justify-center text-white font-black drop-shadow-2xl  text-2xl  sm:pt-44 sm:text-2xl md:text-4xl xsm:text-xl">
             Buy, Sell & Rent farm machinery tools
           </h1>
           <p className="flex justify-center drop-shadow-2xl text-white font-black text-2xl pt-2 ">

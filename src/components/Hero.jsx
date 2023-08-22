@@ -14,13 +14,14 @@ const Hero = () => {
       <section className="relative">
         <SimpleImageSlider
           width="100%"
-          height="40vh"
+          height="50vh"
           images={slideImages}
           showBullets={true}
+          loading="lazy"
           autoPlay={true}
           autoPlayDelay={4}
         />
-        <div className="absolute start:left-12 sm:left-26 start:bottom-24 xsm:bottom-6 md:bottom-28 right-0 px-4 py-2">
+        <div className="absolute start:left-12 sm:left-26 start:bottom-24 xsm:bottom-6 md:bottom-36 right-0 px-4 py-2">
           <h3 className="drop-shadow-2xl page-intro text-white start:text-4xl xxs:text-5xl md:text-6xl font-black lg:text-7xl">
             Seed to Mouth
           </h3>
