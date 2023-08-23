@@ -8,7 +8,6 @@ const CheckoutPage = () => {
   const [userData, setUserData] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
-
   };
 
   // start: "100px",
@@ -91,7 +90,7 @@ const CheckoutPage = () => {
           type="number"
           placeholder="Phone"
         />
-        <Link href="/checkout" className="w-full mt-2">
+        <Link href="/shipping" className="w-full mt-2">
           <button className="bg-green-800 font-black hover:bg-green-600 rounded-md text-white md:px-8 px-6 md:py-4  sm:w-fit w-full py-4">
             Proceed To Pay
           </button>

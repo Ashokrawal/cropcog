@@ -14,7 +14,7 @@ const Hero = () => {
       <section className="relative">
         <SimpleImageSlider
           width="100%"
-          height="50vh"
+          height="40vh"
           images={slideImages}
           showBullets={true}
           loading="lazy"

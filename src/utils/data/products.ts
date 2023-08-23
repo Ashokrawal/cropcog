@@ -80,7 +80,7 @@ export const AllProducts = [
     currentPrice: 40,
     bestSellerDeals: true,
 
-    RecommendedProducts: true,
+    RecommendedProducts: false,
     discount: "40%",
     image: "/Items/spinach-t.png",
     description: "Vitamin B, Phosphorus, Selenium, Copper",
@@ -203,7 +203,7 @@ export const AllProducts = [
     cartHeight: 120,
     trendingDeals: true,
     bestSellerDeals: false,
-    RecommendedProducts: true,
+    RecommendedProducts: false,
     cartWidth: 120,
     category: "Fruits",
     quantity: 250,

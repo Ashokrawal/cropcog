@@ -164,6 +164,15 @@ const CartPage = () => {
               </div>
             </div>
 
+            <div className="flex items-center justify-between w-full ">
+              <h1>Delivery Charges</h1>
+              <div>
+                <span className="font-bold text-sm">
+                  {eligibleForFreeDelivery}
+                </span>
+              </div>
+            </div>
+
             <div className="flex items-center justify-between w-full">
               <h1 className="text-sm md:text-xl">Sub-Total: </h1>
               <div className="flex gap-2">
@@ -185,15 +194,6 @@ const CartPage = () => {
               <div className="flex items-center">
                 <span className="text-green-700">{"\u20B9"}</span>
                 <span className="text-sm text-green-700">50</span>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between w-full ">
-              <h1>Delivery Charges</h1>
-              <div>
-                <span className="font-bold text-sm">
-                  {eligibleForFreeDelivery}
-                </span>
               </div>
             </div>
 
