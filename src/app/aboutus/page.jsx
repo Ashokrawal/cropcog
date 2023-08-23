@@ -46,18 +46,18 @@ const page = () => {
   return (
     <>
       <div className="h-auto pt-10 pb-10">
-        <div className="bg-gradient-to-l from-green-800 via-green-700 to-green-800 h-36 px-20 mb-2">
+        <div className="bg-gradient-to-l flex flex-col justify-start from-green-800 via-green-700 to-green-800 p-10 px-10 sm:px-20 mb-2">
           <h1 className="text-white font-black text-4xl py-4 ">About Us</h1>
           <p className="xxs:text-lg start:text-sm text-gray-300">
             CropCog is a Community name of Ananth Agri Services
           </p>
         </div>
-        <div className="px-20 mt-4">
+        <div className="sm:px-20 px-4 mt-4">
           <section className="mt-4">
             <h1 className="text-orange-700 text-2xl font-bold mb-1">
               Our Motto
             </h1>
-            <p className="text-base">
+            <p className="text-sm">
               ANANTH AGRI SERVICES main motto is to help Indian Farmers and
               Agriculture Community in Rural India for improving their Business
               income by providing needed Agriculture Inputs, resources and
@@ -68,7 +68,7 @@ const page = () => {
             <h1 className="text-orange-700 text-2xl font-bold mb-1">
               Our Mission
             </h1>
-            <p className="text-base">
+            <p className="text-sm">
               AAS committed to promote agriculture and help farmers with
               implementation of modern techniques for various production. It
               diversified its productions into many like Apiculture, Mushroom
@@ -84,7 +84,7 @@ const page = () => {
             <h1 className="text-orange-700 text-2xl font-bold mb-1">
               Our Vision
             </h1>
-            <p className="text-base">
+            <p className="text-sm">
               To inspire new generation of farmers to embrace agriculture & its
               new techniques while delivering high quality production. We aim to
               be at the forefront of research and development in mushroom
@@ -112,7 +112,7 @@ const page = () => {
           </section>
         </div>
         <hr />
-        <section className="mt-10 px-20">
+        <section className="mt-10 px-4 sm:px-20">
           <h1 className="text-bold text-2xl sm:text-4xl mb-4">
             Our certificates
           </h1>
@@ -123,7 +123,7 @@ const page = () => {
                 className="flex items-center flex-col   justify-center"
               >
                 <Image
-                loading="lazy"
+                  loading="lazy"
                   height={each.height}
                   width={each.width}
                   alt={each.name}
