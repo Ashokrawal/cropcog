@@ -1,7 +1,4 @@
 {
   "/page": "app/page.js",
-  "/shipping/page": "app/shipping/page.js",
-  "/products/page": "app/products/page.js",
-  "/checkout/page": "app/checkout/page.js",
-  "/aboutus/page": "app/aboutus/page.js"
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
 }
