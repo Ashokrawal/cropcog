@@ -4,6 +4,9 @@ const nextConfig = {
     keepAlive: false,
   },
   // output: "export",
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;
