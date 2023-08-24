@@ -1,15 +1,15 @@
-export const category = [
-  "Mushrooms",
-  "Vegetables",
-  "Millets",
-  "Pulses",
-  "Cereals",
-  "Flowers",
-  "Fruits",
-  "Fish",
-  "Honey",
-  "Leafy-Veggies",
-];
+// export const category = [
+//   "Mushrooms",
+//   "Vegetables",
+//   "Millets",
+//   "Pulses",
+//   "Cereals",
+//   "Flowers",
+//   "Fruits",
+//   "Fish",
+//   "Honey",
+//   "Leafy-Veggies",
+// ];
 
 export const AllProducts = [
   {

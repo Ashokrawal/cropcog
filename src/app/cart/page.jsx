@@ -27,7 +27,11 @@ const CartPage = () => {
   const [list, setList] = useState([]);
   const totalCartAmount = useSelector(selectTotal);
   const eligibleForFreeDelivery =
-    totalCartAmount >= 499 ? "FREE" : <span>{"\u20B9"}99</span>;
+    totalCartAmount >= 499 ? (
+      "FREE"
+    ) : (
+      <span className="font-normal">{"\u20B9"}99</span>
+    );
 
   useEffect(() => {
     const filteredProducts = RecommendedProducts.filter(
@@ -157,7 +161,7 @@ const CartPage = () => {
             <div className="flex items-center gap-4 justify-between w-full ">
               <h1>Bill Details</h1>
               <div>
-                <span>{"\u20B9"}</span>
+                <span className="font-normal">{"\u20B9"}</span>
                 <span className="font-bold text-sm">
                   {totalCartAmount - 99}{" "}
                 </span>
@@ -176,13 +180,13 @@ const CartPage = () => {
             <div className="flex items-center justify-between w-full">
               <h1 className="text-sm md:text-xl">Sub-Total: </h1>
               <div className="flex gap-2">
-                <span className="text-gray-500 text-sm">
+                <span className="text-gray-500 font-normal">
                   {"\u20B9"}
                   <span className="text-gray-500 line-through">
                     {totalCartAmount + 50}
                   </span>
                 </span>
-                <span className="font-bold text-sm">
+                <span className="font-bold font-normal text-sm">
                   {"\u20B9"}
                   <span>{totalCartAmount}</span>
                 </span>

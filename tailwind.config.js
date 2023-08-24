@@ -24,13 +24,14 @@ module.exports = {
       xsm: "640px",
       md: "830px",
       lg: "1024px",
+      xlg: "1240px",
       xl: "1430px",
       xxl: "1536px",
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        mono: ["var(--font-roboto-mono)"],
+        satoshi: ["Satoshi", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -61,19 +61,19 @@ const ProductCard = ({ product, index }) => {
             <span className="text-gray-500">250Gms</span>
 
             <span className="text-sm">
-              <span className="text-base font-medium">Rich in </span>
+              <span className="text-base font-light">Rich in </span>
               {product.description}
             </span>
             <div className="flex items-center w-full pr-2 justify-between">
               <div className="text-xsm flex items-center font-semibold">
                 <div className="mr-2">
-                  <span className="text-gray-500">{"\u20B9"}</span>
+                  <span className="text-gray-500 font-normal">{"\u20B9"}</span>
                   <span className="text-gray-500 line-through">
                     {product.price}
                   </span>
                 </div>
                 <div>
-                  <span className="">{"\u20B9"}</span>
+                  <span className="font-normal">{"\u20B9"}</span>
                   <span className="">{current}</span>
                 </div>
               </div>

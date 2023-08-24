@@ -10,6 +10,7 @@ import { AllProducts } from "../../utils/data/products";
 import { set, update } from "lodash";
 import ProductCard from "../../components/HomeSections/ProductCard";
 import { ToastContainer } from "react-toastify";
+import axios from "axios";
 
 const productsCategoryTypes = [
   {
@@ -81,6 +82,13 @@ const ProductsFilter = () => {
 
   const cartList = useSelector(allCartItems);
 
+  const fetchDataApi = async () => {
+    const dataInfo = await GET();
+    console.log(dataInfo.data);
+  };
+
+  fetchDataApi();
+
   // {Filter For Input Radio}
 
   useEffect(() => {
@@ -139,6 +147,8 @@ const ProductsFilter = () => {
   return (
     <div className="products-filter p-2 h-auto ">
       {/* {explore category} */}
+
+      <button onClick={() => fetchDataApi()}>Add</button>
 
       <div className="flex items-center justify-between mb-4 pt-4 pr-5">
         <h1 className="mb-4 font-normal text-xs md:text-lg">

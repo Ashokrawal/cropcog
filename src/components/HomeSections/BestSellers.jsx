@@ -17,6 +17,7 @@ import { AllProducts } from "../../utils/data/products";
 //       xsm: "640px",
 //       md: "770px",
 //       lg: "1064px",
+//        xlg:'1240px',
 //       xl: "1430px",
 //       xxl: "1536px",
 
@@ -40,7 +41,7 @@ const BestSellers = () => {
       <h1 className="text-xl lg:text-2xl font-semibold">
         Best Seller Products
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xxs:px-4 md:px-1 grow gap-2  mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xlg:grid-cols-3 xxs:px-4 md:px-1 grow gap-2  mt-4">
         {bestSellersProducts.map((product, index) => (
           <ProductCard product={product} key={index} />
         ))}

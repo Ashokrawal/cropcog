@@ -12,6 +12,8 @@ import Link from "next/link";
 //       xl: "1430px",
 //       xxl: "1536px",
 
+
+
 const ShippingPage = () => {
   return (
     <div className="h-screen px-4 flex flex-col gap-2 ">

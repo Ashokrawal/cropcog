@@ -9,7 +9,7 @@ import Providers from "../components/Providers";
 
 const inter = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400"],
 });
 
 export const metadata = {

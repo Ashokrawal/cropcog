@@ -32,6 +32,10 @@ const certificates = [
   },
 ];
 
+export const metadata = {
+  title: "aboutUs",
+};
+
 // / start: "100px",
 //       xs: "350px",
 //       xxs: "450px",
@@ -57,7 +61,7 @@ const page = () => {
             <h1 className="text-orange-700 text-2xl font-bold mb-1">
               Our Motto
             </h1>
-            <p className="text-sm">
+            <p className="text-lg">
               ANANTH AGRI SERVICES main motto is to help Indian Farmers and
               Agriculture Community in Rural India for improving their Business
               income by providing needed Agriculture Inputs, resources and
@@ -68,7 +72,7 @@ const page = () => {
             <h1 className="text-orange-700 text-2xl font-bold mb-1">
               Our Mission
             </h1>
-            <p className="text-sm">
+            <p className="text-lg">
               AAS committed to promote agriculture and help farmers with
               implementation of modern techniques for various production. It
               diversified its productions into many like Apiculture, Mushroom
@@ -84,7 +88,7 @@ const page = () => {
             <h1 className="text-orange-700 text-2xl font-bold mb-1">
               Our Vision
             </h1>
-            <p className="text-sm">
+            <p className="text-lg">
               To inspire new generation of farmers to embrace agriculture & its
               new techniques while delivering high quality production. We aim to
               be at the forefront of research and development in mushroom
