@@ -98,9 +98,29 @@
   border-color: #b0afaf;
   border-width: 2px;
   border-radius: 4px;
-  padding: 1.2rem;
+  padding: 1rem;
   color: black;
-  font-size: small;
+  font-size: medium;
+}
+
+.textarea {
+  border-color: #b0afaf;
+  border-width: 2px;
+  border-radius: 4px;
+  padding: 1rem;
+
+  color: black;
+  font-size: medium;
+}
+
+.add_product_input {
+  border-color: #b0afaf;
+  border-width: 2px;
+  border-radius: 4px;
+  padding: 0.4rem;
+
+  color: black;
+  font-size: medium;
 }
 
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1063,6 +1083,11 @@ video {
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
@@ -1657,6 +1682,11 @@ video {
   .sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .sm\:text-2xl {
@@ -3411,6 +3441,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
@@ -3907,6 +3941,11 @@ video {
   .sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .sm\:text-2xl {

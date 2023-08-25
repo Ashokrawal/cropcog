@@ -82,12 +82,12 @@ const ProductsFilter = () => {
 
   const cartList = useSelector(allCartItems);
 
-  const fetchDataApi = async () => {
-    const dataInfo = await GET();
-    console.log(dataInfo.data);
-  };
+  // const fetchDataApi = async () => {
+  //   const dataInfo = await GET();
+  //   console.log(dataInfo.data);
+  // };
 
-  fetchDataApi();
+  // fetchDataApi();
 
   // {Filter For Input Radio}
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import Link from "next/link";
+import axios from "axios";
 
 // start: "100px",
 //       xs: "350px",
@@ -12,8 +13,6 @@ import Link from "next/link";
 //       xl: "1430px",
 //       xxl: "1536px",
 
-
-
 const ShippingPage = () => {
   return (
     <div className="h-screen px-4 flex flex-col gap-2 ">
@@ -22,7 +21,7 @@ const ShippingPage = () => {
         <AiOutlineRight />
         <span>Information</span>
         <AiOutlineRight />
-        <span className="font-medium">Shipping</span>
+        <span className="font-bold">Shipping</span>
         <AiOutlineRight />
         <span>Payment</span>
       </div>

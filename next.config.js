@@ -4,8 +4,11 @@ const nextConfig = {
     keepAlive: false,
   },
   // output: "export",
+  images: {},
+
   experimental: {
     appDir: true,
+    serverActions: true,
   },
 };
 

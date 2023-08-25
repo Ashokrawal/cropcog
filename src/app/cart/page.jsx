@@ -60,13 +60,13 @@ const CartPage = () => {
             ) : (
               <div>
                 <div className="flex items-center text-base md:text-lg justify-center md:gap-1 pb-4">
-                  <span className="font-medium">Cart</span>
+                  <span className="font-medium ">Cart</span>
                   <AiOutlineRight />
-                  <span>Information</span>
+                  <span className=" text-gray-600">Information</span>
                   <AiOutlineRight />
-                  <span>Shipping</span>
+                  <span className=" text-gray-600">Shipping</span>
                   <AiOutlineRight />
-                  <span>Payment</span>
+                  <span className=" text-gray-600">Payment</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <h1 className="text-lg lg:text-xl">

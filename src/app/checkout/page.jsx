@@ -23,19 +23,19 @@ const CheckoutPage = () => {
   return (
     <div className="h-auto px-4 xl:px-20 w-full mb-10">
       <div className="flex items-center text-base md:text-lg justify-center md:gap-1 py-6">
-        <span>Cart</span>
+        <span className="text-gray-600">Cart</span>
         <AiOutlineRight />
-        <span className="font-medium">Information</span>
+        <span className="font-extrabold">Information</span>
         <AiOutlineRight />
-        <span>Shipping</span>
+        <span className="text-gray-600">Shipping</span>
         <AiOutlineRight />
-        <span>Payment</span>
+        <span className="text-gray-600">Payment</span>
       </div>
       <form
         className="md:px-40 lg:px-64 sm:px-10 xl:px-86 xxl:px-96 sm:gap-3 gap-2 flex flex-col"
         onSubmit={handleSubmit}
       >
-        <h1 className="font-medium">Contact</h1>
+        <p className="font-extrabold">Contact</p>
         <input
           className="input w-full"
           type="text"
