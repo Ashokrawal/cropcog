@@ -7,7 +7,6 @@ import "../styles/styles.css";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import SignInButton from "./SignInButton";
 import { allCartItems } from "../store/reducers/cartSlice";
 
 // start: "100px",
@@ -105,7 +104,6 @@ function MobileNav({ open, setOpen }) {
             >
               FAQS
             </Link>
-            <SignInButton />
           </div>
         </menu>
       </div>
@@ -202,7 +200,6 @@ export default function Navbar() {
               {cartList.length}
             </span>
           </Link>
-          <SignInButton />
         </div>
       </desktop>
     </>

@@ -103,7 +103,7 @@ const CartPage = () => {
                           <p className="text-gray-500">250 Gms</p>
                           <div className="flex items-center justify-between w-full">
                             <p className="flex">
-                              <span className="mr-2">{"\u20B9"}</span>
+                              <span className="">{"\u20B9"}</span>
                               {product.subTotal}
                             </p>
                             <div className="flex items-center border-2 border-solid justify-center gap-2.5 w-28">

@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,25 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Product {
-  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
-  RecommendedProducts Boolean
-  bestSellerDeals     Boolean
-  cartHeight          Int
-  cartWidth           Int
-  category            String
-  currentPrice        Int
-  description         String
-  discount            String
-  height              Int
-  image               String
-  price               Int
-  quantity            Int
-  title               String
-  trendingDeals       Boolean
-  width               Int
-  createAt            DateTime @default(now())
-  updatedAt           DateTime @updatedAt
+model ShippingDetail {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  email      String  @unique
+  firstName  String
+  lastName   String
+  address    String
+  city       String
+  state      String
+  phone      Int
+  postalCode Int
+  apartment  String?
 
-  @@map("products")
+  @@map("shipping_details")
 }

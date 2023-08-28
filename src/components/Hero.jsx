@@ -28,7 +28,7 @@ const Hero = () => {
           <p class="mt-2 start:text-lg drop-shadow-2xl md:text-3xl xs:text-xl lg:text-4xl font-black text-white">
             "Nature's Finest Delivered."
           </p>
-        </div>{" "}
+        </div>{""}
       </section>
     </div>
   );

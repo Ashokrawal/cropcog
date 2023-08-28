@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import Link from "next/link";
-import axios from "axios";
 
 // start: "100px",
 //       xs: "350px",

@@ -3,13 +3,12 @@ const nextConfig = {
   httpAgentOptions: {
     keepAlive: false,
   },
-  // output: "export",
-  images: {},
 
   experimental: {
-    appDir: true,
+    // appDir: true,
     serverActions: true,
   },
 };
 
 module.exports = nextConfig;
+ 
