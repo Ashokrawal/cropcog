@@ -1,1 +1,1 @@
-self.__RSC_SERVER_MANIFEST="{\n  \"node\": {\n    \"ea166c88b7d7b706928047b1f8755fcefecc58c7\": {\n      \"workers\": {\n        \"app/checkout/page\": \"(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fashok%2FDesktop%2Fcropcog%2Fsrc%2Fapp%2Fcheckout%2Fpage.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!\"\n      },\n      \"layer\": {\n        \"app/checkout/page\": \"rsc\"\n      }\n    }\n  },\n  \"edge\": {}\n}"
+self.__RSC_SERVER_MANIFEST="{\n  \"node\": {},\n  \"edge\": {}\n}"

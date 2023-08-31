@@ -48,6 +48,8 @@ function MobileNav({ open, setOpen }) {
           className="font-semibold md:text-4xl text-2xl body-font"
           href="/"
           onClick={() => setOpen(!open)}
+          id="home"
+          key={"home"}
         >
           CropCog
         </Link>
@@ -55,14 +57,17 @@ function MobileNav({ open, setOpen }) {
           <Link
             className="text-2xl md:text-4xl font-semibold my-6 focus:text-red-500 hover:text-red-500"
             href="/products"
+            key={"products"}
             onClick={() => setOpen(!open)}
           >
             Products
           </Link>
           <div className="flex flex-col">
             <Link
+              key={"wishlist"}
               className="text-lg font-semibold my-2 hover:text-red-500"
               href="/cart"
+              id="wishlist"
               onClick={() => setOpen(!open)}
             >
               Wishlist
@@ -70,6 +75,8 @@ function MobileNav({ open, setOpen }) {
             <Link
               className="text-lg  font-semibold mb-2 my-2 hover:text-red-500"
               href="/cart"
+              id="cart"
+              key={"cart"}
               onClick={() => setOpen(!open)}
             >
               Cart
@@ -79,6 +86,8 @@ function MobileNav({ open, setOpen }) {
             <Link
               className="text-md my-2 text-gray-600 hover:text-red-500"
               href="/aboutus"
+              key={"aboutus"}
+              id="aboutUs"
               onClick={() => setOpen(!open)}
             >
               About Us
@@ -86,6 +95,8 @@ function MobileNav({ open, setOpen }) {
             <Link
               className="text-md  text-gray-600 my-2 hover:text-red-500"
               href="https://aasblogs.in/"
+              id="blogs"
+              key={"blogs"}
               onClick={() => setOpen(!open)}
             >
               Blogs
@@ -93,13 +104,17 @@ function MobileNav({ open, setOpen }) {
             <Link
               className="text-md  text-gray-600 my-2 hover:text-red-500"
               href="/contactUs"
+              id="contactUs"
+              key={"contactUs"}
               onClick={() => setOpen(!open)}
             >
               Contact Us
             </Link>
             <Link
               className="text-md  text-gray-600 my-2 hover:text-red-500"
-              href="/contactUs"
+              href="/faqs"
+              id="faqs"
+              key={"faqs"}
               onClick={() => setOpen(!open)}
             >
               FAQS
@@ -122,7 +137,7 @@ export default function Navbar() {
       <mobile className="flex shadow-md lg:hidden relative z-10 items-center w-full md:px-10 px-6 py-4 justify-between  sm:px-8">
         <MobileNav className="bg-white" open={open} setOpen={setOpen} />
 
-        <Link href="/" key="home" className="site-logo text-semibold">
+        <Link href="/" id="home" key="home" className="site-logo text-semibold">
           CropCog
         </Link>
         <div className="flex bg-white items-center gap-6">
@@ -172,7 +187,7 @@ export default function Navbar() {
 
       {/* Desktop Version  */}
       <desktop className="hidden shadow-md lg:flex relative h-20 items-center flex justify-between md:px-6">
-        <Link key="home" className="text-2xl font-extrabold" href="/">
+        <Link key="home" id="home" className="text-2xl font-extrabold" href="/">
           CropCog
         </Link>
         <div className="text-bold flex items-center justify-center">
@@ -183,6 +198,7 @@ export default function Navbar() {
                 target={each.target}
                 className="mr-10 font-normal text-lg"
                 href={each.url}
+                id={each.id}
               >
                 <span className="nav-link">{each.title}</span>
               </Link>

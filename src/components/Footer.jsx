@@ -40,6 +40,7 @@ const Footer = () => {
           <Link
             className="font-bold text-xl flex flex-col items-center"
             href="/"
+            key={"home"}
           >
             Organic Agenda
           </Link>
@@ -81,16 +82,30 @@ const Footer = () => {
           </div>
           <div className="px-2 mb-10 flex flex-wrap items-center gap-4 mb-6 justify-center grow mt-10 flex-col">
             <p className="text-lg font-medium">Information</p>
-            <Link href="/aboutus">About Us</Link>
-            <Link href="/refund_policies">Refund Policy</Link>
-            <Link href="terms_conditions">Terms & conditions</Link>
-            <Link href="privacy_policies">Privacy Policy</Link>
-            <Link href="/vision">Vision For Future</Link>
+            <Link key={"aboutUs"} href="/aboutus">
+              About Us
+            </Link>
+            <Link key={"refund policy"} href="/refund_policies">
+              Refund Policy
+            </Link>
+            <Link key={"terms"} href="terms_conditions">
+              Terms & conditions
+            </Link>
+            <Link key={"privacy"} href="privacy_policies">
+              Privacy Policy
+            </Link>
+            <Link key={"vision"} href="/vision">
+              Vision For Future
+            </Link>
           </div>
         </footermobile>
         <footerdesktop className="py-10 border-gray grow footer  hidden xl:gap-40 md:flex w-screen gap-20 lg:px-10 px-30 flex flex-wrap items-center  justify-center">
           <div className="flex flex-col flex-wrap relative">
-            <Link className="font-bold text-xl flex flex-col mb-16" href="/">
+            <Link
+              key={"home"}
+              className="font-bold text-xl flex flex-col mb-16"
+              href="/"
+            >
               CropCog
             </Link>
             <div className="flex flex-col gap-2">
@@ -101,6 +116,7 @@ const Footer = () => {
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=ananthagriservices@gmail.com"
                   target="_blank"
+                  key={"email"}
                 >
                   ananthagriservices@gmail.com
                 </a>
@@ -113,6 +129,7 @@ const Footer = () => {
               </div>
               <sectionIcons className="flex items-center gap-2 mt-4">
                 <Link
+                  key={"main-site"}
                   target="_blank"
                   href="https://www.facebook.com/ananth.agri.3"
                 >
@@ -124,6 +141,7 @@ const Footer = () => {
                 </Link>
                 <Link
                   target="_blank"
+                  key={"twitter"}
                   href="https://twitter.com/AgriAnanth?s=08"
                 >
                   <BiLogoTwitter
@@ -134,6 +152,7 @@ const Footer = () => {
                 </Link>
                 <Link
                   target="_blank"
+                  key={"youtube"}
                   href="https://www.youtube.com/channel/UCafIj8NwmnqCuJx3NPmXlEQ"
                 >
                   <BiLogoYoutube
@@ -142,7 +161,11 @@ const Footer = () => {
                     className="bg-gray-400 rounded-full  hover:bg-green-700 p-1"
                   />
                 </Link>
-                <Link target="_blank" href="https://www.instagram.com/cropcog/">
+                <Link
+                  target="_blank"
+                  key={"instagram"}
+                  href="https://www.instagram.com/cropcog/"
+                >
                   <BiLogoInstagram
                     color="white"
                     size={30}
@@ -154,19 +177,19 @@ const Footer = () => {
           </div>
           <div className="px-2 flex flex-wrap items-start gap-4 flex-col">
             <p className="text-lg font-semibold">INFORMATION</p>
-            <Link href="/aboutus">
+            <Link key={"aboutus"} href="/aboutus">
               <span className="nav-link">About Us</span>
             </Link>
-            <Link href="/refund_policies">
+            <Link key={"refund"} href="/refund_policies">
               <span className="nav-link">Refund Policy</span>
             </Link>
-            <Link href={terms_serviceLink} target="_blank">
+            <Link key={"terms"} href={terms_serviceLink} target="_blank">
               <span className="nav-link">Terms & Conditions</span>
             </Link>
-            <Link href={cookiesLink} target="_blank">
+            <Link key={"cookies"} href={cookiesLink} target="_blank">
               <span className="nav-link">Cookies Policy</span>
             </Link>
-            <Link href={policyLink} target="_blank">
+            <Link key={"privacy"} href={policyLink} target="_blank">
               <span className="nav-link">Privacy Policy</span>
             </Link>
           </div>

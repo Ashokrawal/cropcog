@@ -8,6 +8,7 @@ const certificates = [
     url: "/certificates/DIPP72048_ANANTH_AGRI_SERVICES_LLP_RECOGNITION_6891648617633062495_page-0001.jpg",
     height: 600,
     width: 600,
+    alt: "start-up",
   },
   {
     id: 3,
@@ -15,6 +16,7 @@ const certificates = [
     url: "/certificates/Amazon hacthon.jpeg",
     height: 550,
     width: 550,
+    alt: "amazon",
   },
   {
     id: 4,
@@ -22,6 +24,7 @@ const certificates = [
     url: "/certificates/ITC global certificate.jpeg",
     height: 550,
     width: 550,
+    alt: "GGA",
   },
   {
     id: 5,
@@ -29,6 +32,7 @@ const certificates = [
     url: "/certificates/solved challenge certificate.jpeg",
     height: 600,
     width: 600,
+    alt: "UVI",
   },
 ];
 
@@ -130,7 +134,7 @@ const page = () => {
                   loading="lazy"
                   height={each.height}
                   width={each.width}
-                  alt={each.name}
+                  alt={each.alt}
                   className="border-2 border-gray-300"
                   src={each.url}
                 />
