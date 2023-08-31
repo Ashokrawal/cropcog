@@ -116,7 +116,8 @@ export const cartSlice = createSlice({
 
           //Calculate the subtotal price of each "multiple" product
           const subTotal =
-            state.cart[itemIndex].price * state.cart[itemIndex].cartQuantity;
+            state.cart[itemIndex].currentPrice *
+            state.cart[itemIndex].cartQuantity;
           state.cart[itemIndex].subTotal = subTotal;
 
           //localStorage: Update state and push to localStorage
@@ -162,11 +163,9 @@ export const selectTotal = (state) => {
     (total, item) => total + item.subTotal,
     0
   );
-  if (cartTotal >= 499) {
-    return cartTotal;
-  } else {
-    return cartTotal + 99;
-  }
+  const deliveryCharges = cartTotal >= 499 ? 0 : 99;
+
+  return cartTotal + deliveryCharges;
 };
 
 export default cartSlice.reducer;

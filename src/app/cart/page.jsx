@@ -26,12 +26,8 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const [list, setList] = useState([]);
   const totalCartAmount = useSelector(selectTotal);
-  const eligibleForFreeDelivery =
-    totalCartAmount >= 499 ? (
-      "FREE"
-    ) : (
-      <span className="font-normal">{"\u20B9"}99</span>
-    );
+
+  const deliveryCharge = totalCartAmount >= 499 ? 0 : 99;
 
   useEffect(() => {
     const filteredProducts = RecommendedProducts.filter(
@@ -172,7 +168,7 @@ const CartPage = () => {
               <h1>Delivery Charges</h1>
               <div>
                 <span className="font-bold text-sm">
-                  {eligibleForFreeDelivery}
+                  {deliveryCharge === 0 ? "FREE" : "\u20B9" + deliveryCharge}
                 </span>
               </div>
             </div>
