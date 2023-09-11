@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionAddProduct, allCartItems } from "../../store/reducers/cartSlice";
 import ProductCard from "./ProductCard";
 import { AllProducts } from "../../utils/data/products";
+import Slide from "react-reveal/Slide";
+import Reveal from "react-reveal/Reveal";
 
 // start: "100px",
 //       xs: "350",
@@ -41,19 +43,21 @@ const TrendingDeals = () => {
 
   return (
     <div className="sm:px-6 md:px-2 start:mx-4 pb-10 grow">
-      <h1 className="text-xl lg:text-2xl font-semibold">Trending Deals</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xlg:grid-cols-3 xxs:px-4 md:px-1 grow gap-2  mt-4">
-        {trendingDeals.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-      </div>
-      <div className="flex items-center mt-4 justify-center">
-        <Link href="/products">
-          <button className="bg-green-50 shadow-sm hover:bg-green-800 mt-2 hover:text-white  py-3 px-6 rounded-lg">
-            View more
-          </button>
-        </Link>
-      </div>
+      <Reveal bottom>
+        <h1 className="text-xl lg:text-2xl font-semibold">Trending Deals</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 xlg:grid-cols-3 xxs:px-4 md:px-1 grow gap-2  mt-4">
+          {trendingDeals.map((product, index) => (
+            <ProductCard key={index} product={product} />
+          ))}
+        </div>
+        <div className="flex items-center mt-4 justify-center">
+          <Link href="/products">
+            <button className="bg-green-50 shadow-sm hover:bg-green-800 mt-2 hover:text-white  py-3 px-6 rounded-lg">
+              View more
+            </button>
+          </Link>
+        </div>
+      </Reveal>
     </div>
   );
 };

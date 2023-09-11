@@ -11,6 +11,7 @@ import { set, update } from "lodash";
 import ProductCard from "../../components/HomeSections/ProductCard";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import Reveal from "react-reveal/Reveal";
 
 const productsCategoryTypes = [
   {
@@ -193,7 +194,9 @@ const ProductsFilter = () => {
         </div>
         <div className="grid md:grid-cols-2 product-card xl:grid-cols-2 xxl:grid-cols-3 xxs:px-2 bg-gray-50 md:mb-4 grow gap-2">
           {filteredListCategory.map((product, index) => (
-            <ProductCard product={product} key={index} />
+            <Reveal bottom>
+              <ProductCard product={product} key={index} />
+            </Reveal>
           ))}
         </div>
       </main>

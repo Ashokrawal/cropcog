@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import Reveal from "react-reveal/Reveal";
 
 import { useRouter } from "next/router";
 
@@ -85,38 +86,40 @@ const ProductsCategory = () => {
       </h1>
       <div className="grid grid-cols-3 md:grid-cols-4 xlg:grid-cols-8 grow start:gap-4  mt-6 ">
         {categoryImages?.map((each) => (
-          <Link
-            href="/products/"
-            key={each.id}
-            onClick={() => handleClick(each.name)}
-            className="flex flex-col object-fill items-center rounded-md justify-center "
-          >
-            <div className="relative xsm:hidden h-20 w-20">
-              <Image
-                src={each.image}
-                loading="lazy"
-                layout="fill"
-                objectFit="cover"
-                alt={each.name}
-                className="rounded-full shadow-md items-center product-category-img max-w-full h-auto object-rounded"
-              />
-            </div>
-            <div className="relative start:hidden xsm:flex h-32 w-32">
-              <Image
-                src={each.image}
-                layout="fill"
-                loading="lazy"
-                objectFit="cover"
-                alt={each.name}
-                // className=""
-                onLoadingComplete={(img) => img.classList.remove("opacity-0")}
-                className="rounded-full shadow-md items-center product-category-img max-w-full h-auto object-rounded product-item transition-opacity opacity-0 duration-[0.8s]"
-              />
-            </div>
-            <h1 className="text-xs font-normal mt-2 md:text-base">
-              {each.title}
-            </h1>
-          </Link>
+          <Reveal right>
+            <Link
+              href="/products/"
+              key={each.id}
+              onClick={() => handleClick(each.name)}
+              className="flex flex-col object-fill items-center rounded-md justify-center "
+            >
+              <div className="relative xsm:hidden h-20 w-20">
+                <Image
+                  src={each.image}
+                  loading="lazy"
+                  layout="fill"
+                  objectFit="cover"
+                  alt={each.name}
+                  className="rounded-full shadow-md items-center product-category-img max-w-full h-auto object-rounded"
+                />
+              </div>
+              <div className="relative start:hidden xsm:flex h-32 w-32">
+                <Image
+                  src={each.image}
+                  layout="fill"
+                  loading="lazy"
+                  objectFit="cover"
+                  alt={each.name}
+                  // className=""
+                  onLoadingComplete={(img) => img.classList.remove("opacity-0")}
+                  className="rounded-full shadow-md items-center product-category-img max-w-full h-auto object-rounded product-item transition-opacity opacity-0 duration-[0.8s]"
+                />
+              </div>
+              <h1 className="text-xs font-normal mt-2 md:text-base">
+                {each.title}
+              </h1>
+            </Link>
+          </Reveal>
         ))}
       </div>
     </div>
