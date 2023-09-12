@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import "../../styles/styles.css";
 import { allCartItems, actionAddProduct } from "../../store/reducers/cartSlice";
 import getSymbolFromCurrency from "currency-symbol-map";
-import { ToastContainer } from "react-toastify";
-import Reveal from "react-reveal/Reveal";
+
+import { Fade } from "react-awesome-reveal";
 
 const ProductCard = ({ product, index }) => {
   const [selectedProduct, setSelectedProduct] = useState([]);
@@ -27,8 +27,7 @@ const ProductCard = ({ product, index }) => {
 
   return (
     <div className="px-2">
-      <ToastContainer />
-      <Reveal effect="fadeInUp">
+      <Fade direction="up" casecade triggerOnce="true" duration={3000}>
         <div className="card over bg-white product-card  hover:shadow-xl shadow-sm border-black-50w  pb-6 px-2 gap-2 m-1  rounded-lg border-2 border-solid ">
           <div className="flex items-center p-2 px-6 justify-between">
             <Image
@@ -94,7 +93,7 @@ const ProductCard = ({ product, index }) => {
             </div>
           </div>
         </div>
-      </Reveal>
+      </Fade>
     </div>
   );
 };

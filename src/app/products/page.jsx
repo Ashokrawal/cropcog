@@ -9,9 +9,9 @@ import debounce from "lodash.debounce";
 import { AllProducts } from "../../utils/data/products";
 import { set, update } from "lodash";
 import ProductCard from "../../components/HomeSections/ProductCard";
-import { ToastContainer } from "react-toastify";
+
 import axios from "axios";
-import Reveal from "react-reveal/Reveal";
+import { Fade } from "react-awesome-reveal";
 
 const productsCategoryTypes = [
   {
@@ -149,8 +149,6 @@ const ProductsFilter = () => {
     <div className="products-filter p-2 h-auto ">
       {/* {explore category} */}
 
-      <button onClick={() => fetchDataApi()}>Add</button>
-
       <div className="flex items-center justify-between mb-4 pt-4 pr-5">
         <h1 className="mb-4 font-normal text-xs md:text-lg">
           Home / All Products
@@ -194,9 +192,9 @@ const ProductsFilter = () => {
         </div>
         <div className="grid md:grid-cols-2 product-card xl:grid-cols-2 xxl:grid-cols-3 xxs:px-2 bg-gray-50 md:mb-4 grow gap-2">
           {filteredListCategory.map((product, index) => (
-            <Reveal bottom>
+            <Fade direction="up" casecade triggerOnce="true" duration={3000}>
               <ProductCard product={product} key={index} />
-            </Reveal>
+            </Fade>
           ))}
         </div>
       </main>

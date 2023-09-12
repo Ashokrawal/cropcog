@@ -1,6 +1,6 @@
 import React from "react";
 import SimpleImageSlider from "react-simple-image-slider";
-import Slide from "react-reveal/Slide";
+import { Fade } from "react-awesome-reveal";
 
 const slideImages = [
   { url: "/homeSlides/mushrooms-slide.png" },
@@ -23,14 +23,14 @@ const Hero = () => {
           autoPlayDelay={4}
         />
         <div className="absolute start:left-12 sm:left-26 start:bottom-24 xsm:bottom-6 md:bottom-36 right-0 px-4 py-2">
-          <Slide top>
+          <Fade direction="down" triggerOnce="true" casecade duration={3000}>
             <h3 className="drop-shadow-2xl page-intro text-white start:text-4xl xxs:text-5xl md:text-6xl font-black lg:text-7xl">
               Seed to Mouth
             </h3>
             <p class="mt-2 start:text-lg drop-shadow-2xl md:text-3xl xs:text-xl lg:text-4xl font-black text-white">
               "Nature's Finest Delivered."
             </p>
-          </Slide>
+          </Fade>
         </div>
         {""}
       </section>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import Reveal from "react-reveal/Reveal";
+import { Fade } from "react-awesome-reveal";
 
 import { useRouter } from "next/router";
 
@@ -86,7 +86,7 @@ const ProductsCategory = () => {
       </h1>
       <div className="grid grid-cols-3 md:grid-cols-4 xlg:grid-cols-8 grow start:gap-4  mt-6 ">
         {categoryImages?.map((each) => (
-          <Reveal right>
+          <Fade direction="right" triggerOnce="true" casecade duration={3000}>
             <Link
               href="/products/"
               key={each.id}
@@ -119,7 +119,7 @@ const ProductsCategory = () => {
                 {each.title}
               </h1>
             </Link>
-          </Reveal>
+          </Fade>
         ))}
       </div>
     </div>
