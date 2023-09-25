@@ -52,3 +52,10 @@ export async function PUT(request, { params }) {
     });
   }
 }
+
+export async function GET(request, { params }) {
+  const { id } = params;
+  await connectMongoose();
+  const getShippingDetails = await ShippingModel.findOne({ _id: id });
+  return NextResponse.json({ getShippingDetails }, { status: 200 });
+}

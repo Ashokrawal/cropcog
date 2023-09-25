@@ -12,13 +12,13 @@ const CheckoutPage = () => {
   const [lastName, setLastName] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [phone, setPhone] = useState(0);
-  const [postalCode, setPostalCode] = useState(0);
+  const [phone, setPhone] = useState(null);
+  const [postalCode, setPostalCode] = useState(null);
   const [address, setAddress] = useState("");
   const [apartment, setApartment] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -37,10 +37,10 @@ const CheckoutPage = () => {
     }
 
     try {
-      const res = fetch(`http://localhost:3001/api/shippingDetails`, {
+      const res = await fetch(`http://localhost:3000/api/shippingDetails`, {
         method: "POST",
         headers: {
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email,
@@ -88,6 +88,7 @@ const CheckoutPage = () => {
           // type="email"
           name="email"
           id="email"
+          value={email}
           required={true}
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -99,6 +100,7 @@ const CheckoutPage = () => {
             className="input w-full sm:w-1/2"
             type="text"
             required
+            value={firstName}
             name="firstName"
             placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
@@ -107,6 +109,7 @@ const CheckoutPage = () => {
             className="input w-full sm:w-1/2"
             type="text"
             required
+            value={lastName}
             id="lastName"
             name="lastName"
             placeholder="Last Name"
@@ -118,6 +121,7 @@ const CheckoutPage = () => {
           name="address"
           className="input w-full"
           type="text"
+          value={address}
           id="address"
           placeholder="Address"
           onChange={(e) => setAddress(e.target.value)}
@@ -125,9 +129,10 @@ const CheckoutPage = () => {
         <input
           className="input w-full"
           type="text"
+          value={apartment}
           id="apartment"
           name="apartment"
-          placeholder="Apartment, suite, etc (optional)"
+          placeholder="Apartment, suite, etc"
           onChange={(e) => setApartment(e.target.value)}
         />
         <div className="flex items-center sm:flex-row flex-col justify-start sm:justify-between gap-2">
@@ -136,6 +141,7 @@ const CheckoutPage = () => {
             type="text"
             required
             id="city"
+            value={city}
             name="city"
             placeholder="City"
             onChange={(e) => setCity(e.target.value)}
@@ -155,6 +161,7 @@ const CheckoutPage = () => {
             id="postalCode"
             required
             name="postalCode"
+            value={postalCode}
             placeholder="Postal Code"
             onChange={(e) => setPostalCode(e.target.value)}
           />
@@ -165,6 +172,7 @@ const CheckoutPage = () => {
           type="number"
           placeholder="Phone"
           name="phone"
+          value={phone}
           id="phone"
           onChange={(e) => setPhone(e.target.value)}
         />

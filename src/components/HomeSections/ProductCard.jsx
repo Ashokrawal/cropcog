@@ -8,6 +8,7 @@ import { allCartItems, actionAddProduct } from "../../store/reducers/cartSlice";
 import getSymbolFromCurrency from "currency-symbol-map";
 
 import { Fade } from "react-awesome-reveal";
+import Link from "next/link";
 
 const ProductCard = ({ product, index }) => {
   const [selectedProduct, setSelectedProduct] = useState([]);
@@ -26,7 +27,7 @@ const ProductCard = ({ product, index }) => {
   }, [cartList]);
 
   return (
-    <div className="px-2">
+    <Link href={`/products/${product.id}`} className="px-2">
       <Fade direction="up" casecade triggerOnce="true" duration={3000}>
         <div className="card over bg-white product-card  hover:shadow-xl shadow-sm border-black-50w  pb-6 px-2 gap-2 m-1  rounded-lg border-2 border-solid ">
           <div className="flex items-center p-2 px-6 justify-between">
@@ -94,7 +95,7 @@ const ProductCard = ({ product, index }) => {
           </div>
         </div>
       </Fade>
-    </div>
+    </Link>
   );
 };
 

@@ -71,10 +71,12 @@ function MobileNav({ open, setOpen }) {
               onClick={() => setOpen(!open)}
             >
               Wishlist
+              
             </Link>
             <Link
               className="text-lg  font-semibold mb-2 my-2 hover:text-red-500"
               href="/cart"
+
               id="cart"
               key={"cart"}
               onClick={() => setOpen(!open)}

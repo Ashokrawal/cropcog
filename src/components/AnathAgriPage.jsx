@@ -12,7 +12,7 @@ const AnathAgriPage = () => {
           className="plantation flex items-center justify-center"
         >
           <div>
-            <Fade cascade triggerOnce="true" direction="up" duration={2000}>
+            <Fade cascade triggerOnce="true" direction="up" duration={1000}>
               <h1 className="flex justify-center text-white font-black drop-shadow-2xl text-xl  sm:text-2xl items-center flex-col sm:text-2xl md:text-4xl xsm:text-xl">
                 Buy, Sell & Rent farm machinery tools
               </h1>

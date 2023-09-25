@@ -38,7 +38,6 @@ export async function DELETE(request) {
 
 export async function GET() {
   await connectMongoose();
-  const shippingDetails = await ShippingModel.findOne();
-  return NextResponse.json({ shippingDetails }, { status: 200 });
+  const CurrentShippingDetails = await ShippingModel.findOne();
+  return NextResponse.json({ CurrentShippingDetails }, { status: 200 });
 }
-

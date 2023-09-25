@@ -27,6 +27,6 @@
     "**/*.tsx",
     "src/app/api/productsData/route.js",
     "src/app/checkout/page.jsx"
-  ],
+, "src/app/products/[id]/page.jsx"  ],
   "exclude": ["node_modules"]
 }

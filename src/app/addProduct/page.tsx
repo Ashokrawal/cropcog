@@ -1,74 +1,11 @@
 import "../../styles/styles.css";
 import Link from "next/link";
-import { prisma } from "../../lib/db/prisma";
+
 import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Add Product",
 };
-
-// export async function AddProduct(formData: FormData) {
-//   "use server";
-
-//   const title = formData.get("title")?.toString();
-//   const description = formData.get("description")?.toString();
-//   const image = formData.get("image")?.toString();
-//   const price = Number(formData.get("price") || 0);
-//   const currentPrice = Number(formData.get("currentPrice") || 0);
-//   const discount = formData.get("discount")?.toString();
-//   const trendingDeals = Boolean(formData.get("trendingDeals") || false);
-//   const RecommendedProducts = Boolean(
-//     formData.get("RecommendedProducts") || false
-//   );
-//   const bestSellerDeals = Boolean(formData.get("bestSellerDeals") || false);
-//   const quantity = Number(formData.get("quantity") || 0);
-//   const height = Number(formData.get("height") || 0);
-//   const width = Number(formData.get("width") || 0);
-//   const cartHeight = Number(formData.get("cartHeight") || 0);
-//   const cartWidth = Number(formData.get("cartWidth") || 0);
-//   const category = formData.get("category")?.toString();
-
-//   if (
-//     !title ||
-//     !description ||
-//     !image ||
-//     !price ||
-//     !currentPrice ||
-//     !discount ||
-//     !trendingDeals ||
-//     !RecommendedProducts ||
-//     !bestSellerDeals ||
-//     !quantity ||
-//     !height ||
-//     !width ||
-//     !cartHeight ||
-//     !cartWidth ||
-//     !category
-//   ) {
-//     throw Error("Missing fields");
-//   }
-
-//   await prisma.product.create({
-//     data: {
-//       title,
-//       description,
-//       image,
-//       discount,
-//       price,
-//       currentPrice,
-//       trendingDeals,
-//       RecommendedProducts,
-//       bestSellerDeals,
-//       quantity,
-//       height,
-//       width,
-//       cartHeight,
-//       cartWidth,
-//       category,
-//     },
-//   });
-//   redirect("/");
-// }
 
 const AddProductPage = () => {
   return (
